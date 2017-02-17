@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <app-sidebarfilter [result]=value (clicked)="onClicked($event)"></app-sidebarfilter>
+    </div>
+    <div class="col-md-9">
+      <h1>Products</h1>
+      <div class="row">
+        <div *ngFor="let item of allProduct" class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img height="250" src="{{item.pimg}}" alt="...">
+            <div class="caption">
+              <h3>{{item.pname}}</h3>
+              <p>{{item.pprice | currency:'INR':true }}</p>
+              <p><a class="btn btn-primary" role="button">{{item.soh}}</a> <a class="btn btn-default" role="button">Button</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
